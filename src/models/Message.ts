@@ -1,3 +1,9 @@
+import { 
+  UserId, 
+  MessageId, 
+  UnixMilliseconds
+} from "./common";
+
 export default interface IMessage {
   attachment: { url: string; size: number } | null;
   conversationId: string;
@@ -6,10 +12,10 @@ export default interface IMessage {
   custom: { [name: string]: string };
   id: MessageId;
   location: [number, number] | null;
-  origin: "web" | "rest" | "email" | "import";
+  origin: string;
   readBy: UserId[];
   senderId: UserId;
   text: string;
-  type: "UserMessage" | "SystemMessage";
+  type: string;
   referencedMessageId: string | null;
 }

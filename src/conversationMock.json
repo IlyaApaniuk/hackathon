@@ -1,0 +1,29 @@
+{
+    "id": 1,
+    "subject": "Test",
+    "topicId": "some_long_id",
+    "photoUrl": "any_image _url_from_internet",
+    "welcomeMessages": ["message1", "message2"],
+    "custom": { 
+        "testCustom1": "custom1"
+    },
+    "lastMessage": {
+        "attachment": null,
+        "conversationId": "long_conversation_id1",
+        "createdAt": 1685114573938,
+        "editedAt": 1685110573938,
+        "custom": {},
+        "id": "long_message_id1",
+        "location": null,
+        "origin": "web",
+        "readBy": ["long_user_id1"],
+        "senderId": "long_user_id1",
+        "text": "some_text",
+        "type": "UserMessage",
+        "referencedMessageId": null
+    },
+    "participants": {
+        "replace_with_user_id": { "access": "ReadWrite", "notify": true }
+    },
+    "createdAt": 1685114573938
+}

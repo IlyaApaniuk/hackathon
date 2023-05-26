@@ -1,17 +1,11 @@
 import React from "react";
 
-import useChatUsers from "../../hooks/useChatUsers";
+import Conversations from "./Conversations/Conversations";
 
 const Chat: React.FC = () => {
-    const {
-        users
-    } = useChatUsers()
-
-
-
     return (
-        <div>
-            Chat
+        <div className="divide-x divide-gray-10">
+            <Conversations />
         </div>
     )
 };

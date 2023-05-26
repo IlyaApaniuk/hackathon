@@ -1,15 +1,20 @@
 import IMessage from "./Message";
+import { 
+  UserId, 
+  ConversationId, 
+  UnixMilliseconds
+} from "./common";
 
 export default interface IConversation {
   id: ConversationId;
-  subject?: string;
-  topicId?: string;
-  photoUrl?: string;
-  welcomeMessages?: string[];
-  custom?: { [name: string]: string };
-  lastMessage?: IMessage;
+  subject?: string | null;
+  topicId?: string | null;
+  photoUrl?: string | null;
+  welcomeMessages?: string[] | null;
+  custom?: { [name: string]: string } | null;
+  lastMessage?: IMessage | null;
   participants: {
-    [id: UserId]: { access: 'ReadWrite' | 'Read'; notify: boolean };
+    [id: UserId]: { access: string; notify: boolean };
   };
   createdAt: UnixMilliseconds;
 }
