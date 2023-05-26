@@ -1,3 +1,8 @@
+import { 
+  UserId, 
+  UnixMilliseconds 
+} from "./common";
+
 export default interface IUser {
   id: UserId;
   name: string;

@@ -1,17 +1,18 @@
 [
-    {
-        "id": "long_user_id1",
-        "name": "Test",
-        "welcomeMessage": "message",
-        "photoUrl": "any_image",
-        "headerPhotoUrl": null,
-        "role": "",
-        "email": ["test@test.com"],
-        "phone": ["+2323232323232"],
-        "custom": {},
-        "availabilityText": "",
-        "locale": "en-us",
-        "createdAt": 1685110573938,
-        "pushTokens": null
-      }
+  {
+    "availabilityText": null,
+    "createdAt": 1623926680918,
+    "custom": {},
+    "email": ["alice@example.com"],
+    "id": "123456789",
+    "locale": "en-US",
+    "name": "Alice",
+    "phone": null,
+    "photoUrl": "https://talkjs.com/images/avatar-1.jpg",
+    "role": "default",
+    "welcomeMessage": "Hey there! How are you? :-)",
+    "pushTokens": {
+      "apns:MY_TOKEN_ID": true
+    }
+  }
 ]

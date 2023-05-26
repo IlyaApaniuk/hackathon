@@ -1,4 +1,4 @@
-type UserId = string;
-type MessageId = string;
-type ConversationId = string;
-type UnixMilliseconds = number;
+export type UserId = string;
+export type MessageId = string;
+export type ConversationId = string;
+export type UnixMilliseconds = number;

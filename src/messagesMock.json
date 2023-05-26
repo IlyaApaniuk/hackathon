@@ -1,17 +1,17 @@
 [
-    {
-        "attachment": null,
-        "conversationId": "long_conversation_id1",
-        "createdAt": 1685114573938,
-        "editedAt": 1685110573938,
-        "custom": {},
-        "id": "long_message_id1",
-        "location": null,
-        "origin": "web | rest | email | import",
-        "readBy": ["long_user_id1"],
-        "senderId": "long_user_id1",
-        "text": "some_text",
-        "type": "UserMessage | SystemMessage",
-        "referencedMessageId": null
-      }
+  {
+    "attachment": null,
+    "conversationId": "conver",
+    "createdAt": 1632919967033,
+    "editedAt": 16329200167563,
+    "custom": {},
+    "id": "message_id1",
+    "location": null,
+    "origin": "web",
+    "readBy": [],
+    "senderId": "432156789",
+    "text": "Hey, I'm in London",
+    "type": "UserMessage",
+    "referencedMessageId": "referenced_message_id"
+  }
 ]
