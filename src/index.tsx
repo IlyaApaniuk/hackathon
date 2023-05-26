@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import { BrowserRouter } from 'react-router-dom'
+
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 
 import './styles/index.css';
+import routesMapper from './routes/routesMapper';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      {routesMapper()}
+    </BrowserRouter>
   </React.StrictMode>
 );
 
