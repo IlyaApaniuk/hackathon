@@ -1,0 +1,17 @@
+[
+    {
+        "id": "long_user_id1",
+        "name": "Test",
+        "welcomeMessage": "message",
+        "photoUrl": "any_image",
+        "headerPhotoUrl": null,
+        "role": "",
+        "email": ["test@test.com"],
+        "phone": ["+2323232323232"],
+        "custom": {},
+        "availabilityText": "",
+        "locale": "en-us",
+        "createdAt": 1685110573938,
+        "pushTokens": null
+      }
+]

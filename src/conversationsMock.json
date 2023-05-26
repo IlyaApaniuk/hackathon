@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "subject": "Test",
+        "topicId": "some_long_id",
+        "photoUrl": "any_image _url_from_internet",
+        "welcomeMessages": ["message1", "message2"],
+        "custom": { 
+            "testCustom1": "custom1"
+        },
+        "lastMessage": null,
+        "participants": {
+            "replace_with_user_id": { "access": "ReadWrite | Read", "notify": true }
+        },
+        "createdAt": 1685114573938
+    }
+]
