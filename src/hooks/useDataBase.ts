@@ -17,8 +17,8 @@ const useDataBase = () => {
         setDatabase(newDatabase);
     }
 
-    const onGetData = useCallback((name: string) => {
-        return database[name];
+    const onGetData = useCallback(<T>(name: string) => {
+        return database[name] as T;
     }, [database]);
 
     return {

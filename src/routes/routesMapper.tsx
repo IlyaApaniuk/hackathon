@@ -1,8 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 
-import routes from './routes'
-
-const routesMapper = () => {
+const routesMapper = (routes: { path: string; component: React.LazyExoticComponent<React.FC<{}>> }[]) => {
     return (
         <Routes>
             {routes.map((route) => {
