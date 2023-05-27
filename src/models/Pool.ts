@@ -1,4 +1,4 @@
-export default interface IPull {
+export default interface IPool {
     id?: number;
     totalAmount: number;
     currentAmount: number;

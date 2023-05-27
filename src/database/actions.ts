@@ -1,5 +1,6 @@
 enum actions {
-    ADD_PULL
+    ADD_POOL,
+    UPDATE_NAV
 }
 
 export default actions;

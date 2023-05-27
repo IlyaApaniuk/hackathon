@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 
-import { BrowserRouter } from 'react-router-dom'
+import { DAppProvider } from '@usedapp/core';
+import { BrowserRouter } from 'react-router-dom';
 
-import App from './components/App/App';
+import routes from './routes/routes';
+import config from './config/mantleConfig';
 import reportWebVitals from './reportWebVitals';
+import routesMapper from './routes/routesMapper';
 
 import './styles/index.css';
-import routesMapper from './routes/routesMapper';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,7 +17,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      {routesMapper()}
+      <DAppProvider config={config}>
+        <Suspense>
+          {routesMapper(routes)}
+        </Suspense>
+      </DAppProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

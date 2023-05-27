@@ -3,7 +3,7 @@ import React from 'react'
 import IConversation from '../../../models/Conversation';
 // import useChatConversations from '../../../hooks/useChatConversations';
 
-import conversations from '../../../conversationsMock.json';
+import conversations from '../../../conversationsMock.json'
 
 const Conversations: React.FC = () => {
     // const {

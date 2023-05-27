@@ -1,7 +1,9 @@
-import IPull from "./Pull";
+import INavigation from "./Navigation";
+import IPool from "./Pool";
 
 export default interface IDataBase {
-    [name: string]: IPull[];
-    pulls: IPull[];
+    [name: string]: IPool[] | INavigation[];
+    pools: IPool[];
+    navigation: INavigation[];
 }
 
