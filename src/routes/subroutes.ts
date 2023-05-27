@@ -1,16 +1,21 @@
 import { lazy } from "react";
 
-const Forum = lazy(() => import('../components/Forum/Forum'));
-const Pools = lazy(() => import('../components/Pools/Pools'));
+const Forum = lazy(() => import("../components/Forum/Forum"));
+const Pools = lazy(() => import("../components/Pools/Pools"));
+const PoolDetails = lazy(() => import("../components/Pools/PoolDetails/PoolDetails"));
 
 const subroutes = [
     {
-        path: '/',
+        path: "/",
         component: Pools
     },
     {
-        path: '/forum',
+        path: "/forum",
         component: Forum
+    },
+    {
+        path: "/pools/:poolId",
+        component: PoolDetails
     }
 ];
 

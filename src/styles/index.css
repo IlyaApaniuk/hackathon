@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    background-color: #111111;
+    font-family: 'Gilroy-Regular';
+}
+
 .flex-1 {
     flex: 1;
+}
+
+@font-face {
+    font-family: 'Gilroy-Regular';
+    src: local('MyFont'), url(../fonts/Gilroy-Regular.woff) format('woff');
 }

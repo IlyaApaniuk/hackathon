@@ -1,15 +1,15 @@
 import { lazy } from "react";
 
-const App = lazy(() => import('../components/App/App'));
-const Welcome = lazy(() => import('../components/Welcome/Welcome'));
+const App = lazy(() => import("../components/App/App"));
+const Welcome = lazy(() => import("../components/Welcome/Welcome"));
 
 const routes = [
     {
-        path: '/*',
+        path: "/*",
         component: Welcome
-    }, 
+    },
     {
-        path: '/app/*',
+        path: "/app/*",
         component: App
     }
 ];
