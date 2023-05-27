@@ -1,9 +1,17 @@
 export default interface IPool {
-    id?: number;
+    address: string;
+    tokenId: number;
+    maxAmount: number;
     totalAmount: number;
-    currentAmount: number;
-    numberOfParticipants: number;
-    assetAddress: string;
-    assetTokenId: string;
-    description: string;
+    endTime: number;
+    minParticipation: number;
+    itemId: number;
+    collection: string;
+    marketplace: string;
+    poolFinished: boolean;
+    poolSuccessful: boolean;
+}
+
+export const poolConfig = {
+
 }

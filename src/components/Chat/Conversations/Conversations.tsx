@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
-import IConversation from '../../../models/Conversation';
+import IConversation from "../../../models/Conversation";
 // import useChatConversations from '../../../hooks/useChatConversations';
 
-import conversations from '../../../conversationsMock.json'
+import conversations from "../../../conversationsMock.json";
 
 const Conversations: React.FC = () => {
     // const {
@@ -11,10 +11,10 @@ const Conversations: React.FC = () => {
     //     conversations
     // } = useChatConversations()
 
-    const cons: IConversation[] = conversations
+    const cons: IConversation[] = conversations;
 
     return (
-        <div role="list" className='divide-y divide-gray-100'>
+        <div role="list" className="divide-y divide-gray-100">
             {cons?.map(c => (
                 <li key={c.id} className="flex justify-between gap-x-6 py-5">
                     <div className="flex gap-x-4">
@@ -27,7 +27,7 @@ const Conversations: React.FC = () => {
                 </li>
             ))}
         </div>
-    )
-}
+    );
+};
 
 export default Conversations;

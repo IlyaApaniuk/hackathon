@@ -1,0 +1,78 @@
+.PoolMain {
+    &-Wrapper {
+        background-color: #000000;
+        border-radius: 28px;
+        width: 312px;
+        height: 336px;
+        padding: 10px 30px;
+    }
+
+    &-Details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+
+        &_Address {
+            gap: 5px;
+
+            &Label {
+                font-size: 40px;
+                font-weight: 400;
+            }
+
+            &Value {
+                color: #156464;
+                border: 0.5px solid #156464;
+                border-radius: 18px;
+            }
+        }
+
+        &_Token {
+            gap: 15px;
+
+            &Label {
+                font-size: 23px;
+                font-weight: 500;
+            }
+
+            &Value {
+                color: #156464;
+                background-color: rgba(21, 100, 100, 0.32);
+                border-radius: 18px;
+            }
+        }
+
+        &_MinParticipation {
+            gap: 10px;
+
+            &Label {
+                font-size: 22px;
+                font-weight: 500;
+            }
+
+            &Value {
+                color: #156464;
+                background-color: rgba(21, 100, 100, 0.32);
+                border-radius: 18px;
+            }
+        }
+    }
+}
+
+.white {
+    color: #ffffff;
+}
+
+.value {
+    padding: 3px 17px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+

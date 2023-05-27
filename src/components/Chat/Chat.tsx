@@ -7,7 +7,7 @@ const Chat: React.FC = () => {
         <div className="divide-x divide-gray-10">
             <Conversations />
         </div>
-    )
+    );
 };
 
 export default Chat;
