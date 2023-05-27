@@ -4,7 +4,12 @@ import React, { useCallback, useEffect, useMemo } from "react";
 import { useEthers } from "@usedapp/core";
 
 import { Disclosure } from "@headlessui/react";
-import { XMarkIcon, Bars3Icon, CloudArrowUpIcon, CloudArrowDownIcon } from "@heroicons/react/24/outline";
+import {
+    XMarkIcon,
+    Bars3Icon,
+    CloudArrowUpIcon,
+    CloudArrowDownIcon
+} from "@heroicons/react/24/outline";
 
 import actions from "../../database/actions";
 import subroutes from "../../routes/subroutes";
@@ -45,17 +50,15 @@ const App: React.FC = () => {
     }, []);
 
     return (
-        <>
-            <div className="min-h-full">
-                <header className="App-Header">
-                    <div className="App-Header_Content"></div>
-                </header>
+        <div className="min-h-full">
+            <header className="App-Header">
+                <div className="App-Header_Content"></div>
+            </header>
 
-                <main className="">
-                    <div className="min-h-full">{routesMapper(subroutes)}</div>
-                </main>
-            </div>
-        </>
+            <main className="">
+                <div className="min-h-full">{routesMapper(subroutes)}</div>
+            </main>
+        </div>
     );
 };
 
