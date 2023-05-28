@@ -1,75 +1,48 @@
-import React, { useCallback, useContext, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Shimmer, ShimmerElementType, ShimmerElementsGroup } from "@fluentui/react/lib/Shimmer";
+import React, { useCallback, useContext } from "react";
 
 import AppContext from "../../context/context";
 import useAddresses from "../../hooks/useAddresses";
-import useDataBase from "../../hooks/useDataBase";
-import useAuthUser from "../../hooks/useAuthUser";
-import useCreateConversation from "../../hooks/useCreateConversation";
-import { onPayToJoinPool } from "../../services/NftService";
 import usePoolsInfo from "../../hooks/usePoolsInfo";
 
 import Pool from "./Pool/Pool";
 
 import "./Pools.scss";
-
+import { Spinner, SpinnerSize } from "@fluentui/react";
 
 const Pools: React.FC = () => {
     const navigate = useNavigate();
-    const { authUser } = useAuthUser();
-    const context = useContext(AppContext)
+    const {
+        onSetPools
+    } = useContext(AppContext)
 
     const {
         addresses,
-        addressesError,
-        isAddressesLoading,
-        clearAddressesError
+        isAddressesLoading
     } = useAddresses();
     const {
         pools,
-        poolsError,
-        isPoolsLoading,
-        clearPoolsError
+        isPoolsLoading
     } = usePoolsInfo(addresses || [], !!addresses);
 
     const isLoading = isPoolsLoading || isAddressesLoading;
 
-    const conv = {
-        participants: [authUser?.id || ""],
-        subject: "Black leather boots",
-        welcomeMessages: ["Hello there!", "I'm currently out of town, leave a message and I'll respond ASAP. :)"],
-        custom: {
-            productId: "454545"
-        },
-        photoUrl: "https://example.com/productpictures/454545.png"
-    };
-
-    // const { newPoolConversationError, onSubmitNewPoolConversation, clearNewPoolConversationError } = useCreateConversation(conv);
-
-    // const onJoinPool = useCallback(
-    //     async (poolId: number | undefined) => {
-    //         const isPaidSuccessfully = await onPayToJoinPool();
-
-    //         if (isPaidSuccessfully) {
-    //             await onSubmitNewPoolConversation();
-    //             if (!newPoolConversationError) {
-    //                 navigate(`/app/pools/${poolId}`);
-    //             }
-    //         }
-    //     },
-    //     [newPoolConversationError, navigate, onSubmitNewPoolConversation]
-    // );
-
     const onJoinPool = useCallback((address: string) => {
+        onSetPools(pools || []);
         navigate(`/app/pools/${address}`);
-    }, [navigate]);
+    }, [pools, navigate, onSetPools]);
 
     return (
         <div className="Pools-Wrapper">
-            {pools?.map(p => (
-                <Pool key={p.address} pool={p} onClick={() => onJoinPool(p.address)} />
-            ))}
+            {isLoading ? (
+                <Spinner size={SpinnerSize.large} className="Loader"/>
+            ) : (
+                <>
+                    {pools?.map(p => (
+                        <Pool key={p.address} pool={p} onClick={() => onJoinPool(p.address)} />
+                    ))}
+                </>
+            )}
         </div>
     );
 };

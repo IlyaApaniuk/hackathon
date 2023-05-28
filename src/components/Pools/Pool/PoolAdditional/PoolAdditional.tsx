@@ -11,7 +11,7 @@ export interface IPoolAdditionalProps {
 }
 
 const PoolAdditional: React.FC<IPoolAdditionalProps> = ({ pool }) => {
-    const endsInHeight = useMemo(() => (new Date(formatHexIntoDecimal(pool.endTime)).getTime() / new Date().getTime()) * 100, [pool.endTime]);
+    const endsInHeight = useMemo(() => Math.random() * 100, []);
 
     const amountHeight = useMemo(() => (formatHexIntoDecimal(pool.totalAmount) / formatHexIntoDecimal(pool.maxAmount)) * 100, [pool.totalAmount, pool.maxAmount]);
 

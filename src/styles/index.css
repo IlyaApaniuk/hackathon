@@ -4,11 +4,66 @@
 
 @font-face {
     font-family: 'Gilroy-Regular';
-    src: local('MyFont'), url(../fonts/Gilroy-Regular.woff) format('woff');
+    src: local('Gilroy-Regular'), url(../fonts/Gilroy-Regular.woff) format('woff');
 }
+
+@font-face {
+    font-family: 'Gilroy-Black';
+    src: url(../fonts/Gilroy-Black.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Gilroy-Bold';
+    src: url(../fonts/Gilroy-Bold.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Gilroy-BoldItalic';
+    src: url(../fonts/Gilroy-BoldItalic.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Gilroy-Extrabold';
+    src: url(../fonts/Gilroy-Extrabold.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Gilroy-Heavy';
+    src: url(../fonts/Gilroy-Heavy.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Gilroy-Light';
+    src: url(../fonts/Gilroy-Light.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Gilroy-Medium';
+    src: url(../fonts/Gilroy-Medium.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Gilroy-Semibold';
+    src: url(../fonts/Gilroy-Semibold.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Gilroy-Thin';
+    src: url(../fonts/Gilroy-Thin.woff) format('woff');
+}
+
 
 body {
     background-color: #111111;
+    /* font-family: 'Gilroy-Thin'; */
+    /* font-family: 'Gilroy-Semibold'; */
+    /* font-family: 'Gilroy-Medium'; */
+    /* font-family: 'Gilroy-Light'; */
+    /* font-family: 'Gilroy-Heavy'; */
+    /* font-family: 'Gilroy-Extrabold'; */
+    /* font-family: 'Gilroy-BoldItalic'; */
+    /* font-family: 'Gilroy-Bold'; */
+    /* font-family: 'Gilroy-Black'; */
     font-family: 'Gilroy-Regular';
 }
 

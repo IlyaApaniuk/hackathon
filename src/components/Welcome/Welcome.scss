@@ -1,6 +1,6 @@
 .Landing {
     background-image: url(../../images/landing/background.png);
-    height: 4150px;
+    height: 4860px;
 
     &-Header {
         min-width: 100%;
@@ -118,8 +118,25 @@
             }
         }
 
+        &_Roadmap {
+            margin-top: 203px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .Roadmap {
+                &-Header {
+                    font-size: 70px;
+                    font-weight: 500;
+                    color: #ffffff;
+                    margin-bottom: -200px;
+                }
+            }
+        }
+
         &_Newseller {
-            margin-top: 268px;
+            margin-top: -160px;
             display: flex;
             flex-direction: column;
             align-items: center;

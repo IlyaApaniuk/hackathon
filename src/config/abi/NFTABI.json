@@ -100,7 +100,7 @@
     },
     {
       "inputs": [],
-      "name": "MAX_SUPPLY",
+      "name": "_totalSupply",
       "outputs": [
         {
           "internalType": "uint256",
@@ -149,6 +149,19 @@
       "type": "function"
     },
     {
+      "inputs": [],
+      "name": "baseURI",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "internalType": "uint256",
@@ -162,16 +175,16 @@
       "type": "function"
     },
     {
-      "inputs": [],
-      "name": "currentTokenId",
-      "outputs": [
+      "inputs": [
         {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
+          "internalType": "string",
+          "name": "baseURI_",
+          "type": "string"
         }
       ],
-      "stateMutability": "view",
+      "name": "changeBaseURI",
+      "outputs": [],
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -218,16 +231,36 @@
       "type": "function"
     },
     {
-      "inputs": [
+      "inputs": [],
+      "name": "maxSupply",
+      "outputs": [
         {
-          "internalType": "address",
-          "name": "to",
-          "type": "address"
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         }
       ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "mint",
       "outputs": [],
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "mintPriceInWei",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -403,6 +436,19 @@
       "type": "function"
     },
     {
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "internalType": "address",
@@ -434,6 +480,47 @@
         }
       ],
       "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "tokenErc20",
+          "type": "address"
+        }
+      ],
+      "name": "withdrawERC20",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
