@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import logo from "../../images/logo.png";
 import footer from "../../images/landing/footer.png";
+import roadmap from "../../images/landing/roadmap.png";
 import howItWorks from "../../images/landing/how-it-works.png";
 import benefitsForUser from "../../images/landing/benefits-for-user.png";
 import benefitsForClient from "../../images/landing/benefits-for-client.png";
@@ -61,6 +62,13 @@ const Welcome: React.FC = () => {
                         <img src={benefitsForUser} alt="" width={691} height={395} />
                         <img src={benefitsForClient} alt="" width={691} height={395} />
                     </div>
+                </div>
+
+                <div className="Landing-Main_Roadmap">
+                    <div className="Roadmap-Header">
+                        Roadmap
+                    </div>
+                    <img src={roadmap} alt="" />
                 </div>
 
                 <div className="Landing-Main_Newseller">

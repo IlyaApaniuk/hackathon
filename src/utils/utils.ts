@@ -3,7 +3,8 @@ import { UserIds } from "../config/userIds";
 
 export const getShortAddress = (account: string): string =>
     `${account.slice(0, 4)}...${account.slice(account.length - 4)}`;
-export const formatHexIntoDecimal = (hex: number): number => parseInt(formatUnits(hex, 18));
+export const formatHexIntoDecimal = (hex: number): number => parseInt(formatUnits(hex, 16));
+export const formatHexIntoDate = (hex: number): number => parseInt(formatUnits(hex, 0));
 export const formatCreatedAtMessageDate = (ticks: number): string => {
     const date = new Date(ticks);
 

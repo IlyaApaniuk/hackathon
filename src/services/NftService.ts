@@ -7,7 +7,7 @@ import { FACTORY_ADDRESS, MULTICALL_ADDRESS, RPC_ADDRESS } from "../config/const
 import IPool, { poolPropertyNames } from "../models/Pool";
 
 const CHAIN_ID = 5001;
-const TOTAL_DATA_DISPLAY = 10;
+const TOTAL_DATA_DISPLAY = 5;
 
 const PrepareResponse = <T>(data: T) => new Response(JSON.stringify(data));
 
@@ -57,7 +57,6 @@ export const getPoolList = async () => {
             }
         }
     } catch (error) {
-        debugger;
         throw error;
     }
     setMulticallAddress(CHAIN_ID, MULTICALL_ADDRESS[CHAIN_ID]);
@@ -96,8 +95,6 @@ export const getPoolsInfo = async (addresses: string[]) => {
 
             return pool;
         });
-
-        debugger
 
         return PrepareResponse(pools);
     } catch (error) {

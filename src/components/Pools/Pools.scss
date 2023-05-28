@@ -7,4 +7,14 @@
     row-gap: 90px;
     justify-content: center;
     align-items: center;
+
+    .Loader {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+
+        .ms-Spinner--large {
+            border-color: #6CA78A rgb(199, 224, 244) rgb(199, 224, 244);
+        }
+    }
 }

@@ -26,7 +26,7 @@ const Passport: React.FC = () => {
 
         try {
             setLoading(true);
-            const mint = await contract.mint(account);
+            const mint = await contract.mint();
             await mint.wait();
             setLoading(false);
         } catch (ex) {
@@ -35,7 +35,7 @@ const Passport: React.FC = () => {
         }
     };
 
-    const mint = useCallback(handleMint, [account, library]);
+    const mint = useCallback(handleMint, [library]);
 
     return (
         <div className="Passport">

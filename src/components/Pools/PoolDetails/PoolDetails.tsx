@@ -1,16 +1,16 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useContext, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
+
+import AppContext from "../../../context/context";
 
 import mainIcon from "../../../images/pool-details/main-icon.png";
 import joinedMainIcon from "../../../images/pool-details/joined-main-icon.png";
-
 // import voteIcon from "../../../images/pool-details/vote-icon.png";
 import dividents from "../../../images/pool-details/dividends.png";
 import agreeButton from "../../../images/pool-details/agree-button.png";
 import disabledChat from "../../../images/pool-details/disabled-chat.png";
 
 import Chat from "../../Chat/Chat";
-import IPool from "../../../models/Pool";
 import useConversation from "../../../hooks/useConversation";
 import { formatHexIntoDecimal, getShortAddress } from "../../../utils/utils";
 
@@ -26,12 +26,15 @@ const PoolDetails: React.FC = () => {
     const { poolId } = useParams();
     const [showPopup, setShowPopup] = useState<boolean>(false);
     const [isParticipant, setParticipant] = useState<boolean>(false);
+    const { findPoolById } = useContext(AppContext);
 
     const {
         conversation
     } = useConversation("internal_conversation_1685185853695");
 
-    const pool = {} as IPool;
+    const pool = useMemo(() => (
+        findPoolById(poolId)
+    ), [findPoolById, poolId])
 
     const onParticipate = useCallback(() => {
         setShowPopup(!showPopup);
