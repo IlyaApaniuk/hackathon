@@ -1,15 +1,7 @@
-import classNames from "classnames";
 import { useNavigate, useLocation } from "react-router-dom";
 import React, { useCallback, useEffect, useMemo } from "react";
 import { useEthers } from "@usedapp/core";
 
-import { Disclosure } from "@headlessui/react";
-import {
-    XMarkIcon,
-    Bars3Icon,
-    CloudArrowUpIcon,
-    CloudArrowDownIcon
-} from "@heroicons/react/24/outline";
 
 import actions from "../../database/actions";
 import subroutes from "../../routes/subroutes";
@@ -18,7 +10,11 @@ import useDataBase from "../../hooks/useDataBase";
 import { getShortAddress } from "../../utils/utils";
 import routesMapper from "../../routes/routesMapper";
 
-import "./App.css";
+import logo from "../../images/logo.png";
+import metamaskLogo from "../../images/metamask_logo.png";
+
+import "./App.scss";
+import AppContext, { initValue } from "../../context/context";
 
 const App: React.FC = () => {
     const location = useLocation();
@@ -50,13 +46,31 @@ const App: React.FC = () => {
     }, []);
 
     return (
-        <div className="min-h-full">
+        <div className="App min-h-full">
             <header className="App-Header">
-                <div className="App-Header_Content"></div>
+                <div className="App-Header_Content">
+                    <img src={logo} alt="" height={40} width={138} />
+                    <div className="App-Header_Controls">
+                        {account ? (
+                            <div className="MetamaskConnected" onClick={onAuthClick}>
+                                <img src={metamaskLogo} alt="" width={16} height={16}/>
+                                <div className="Address">
+                                    {getShortAddress(account)}
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="MetamaskDisconnected" onClick={onAuthClick}>
+                                Connect To Metamask
+                            </div>
+                        )}
+                    </div>
+                </div>
             </header>
 
             <main className="">
-                <div className="min-h-full">{routesMapper(subroutes)}</div>
+                <AppContext.Provider value={initValue}>
+                    <div className="min-h-full">{routesMapper(subroutes)}</div>
+                </AppContext.Provider>
             </main>
         </div>
     );

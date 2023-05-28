@@ -20,13 +20,13 @@ const PoolAdditional: React.FC<IPoolAdditionalProps> = ({ pool }) => {
             <img src={poolStatistics} alt="" height={40} width={130} />
             <div className="PoolAdditional-Statistics">
                 <div className="PoolAdditional-Statistics_Straw">
-                    <div className="PoolAdditional-Statistics_Straw-Background-EndsIn">
-                        <div className="PoolAdditional-Statistics_StrawValue-EndsIn" style={{ height: 200 }} />
+                    <div className="PoolAdditional-Statistics_Straw-Background-EndsIn" style={{ height: `${endsInHeight}%` }}>
+                        <div className="PoolAdditional-Statistics_StrawValue-EndsIn" style={{ height: `${endsInHeight}%` }} />
                     </div>
                 </div>
                 <div className="PoolAdditional-Statistics_Straw">
-                    <div className="PoolAdditional-Statistics_Straw-Background-Amount">
-                        <div className="PoolAdditional-Statistics_StrawValue-Amount" style={{ height: 150 }} />
+                    <div className="PoolAdditional-Statistics_Straw-Background-Amount" style={{ height: `${amountHeight}%`}}>
+                        <div className="PoolAdditional-Statistics_StrawValue-Amount" style={{ height: `${amountHeight}%`}} />
                     </div>
                 </div>
             </div>

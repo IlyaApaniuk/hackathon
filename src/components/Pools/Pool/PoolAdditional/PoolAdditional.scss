@@ -9,7 +9,7 @@
         width: 130px;
         height: 336px;
         border-radius: 22px;
-        background-color: #000000;
+        background-color: #070707;
         padding: 25px 31px 25px 27px;
         gap: 36px;
         display: flex;
@@ -21,6 +21,8 @@
             width: 20px;
             height: 278px;
             border-radius: 22px;
+            display: flex;
+            flex-direction: column-reverse;
 
             &-Background {
                 &-EndsIn {

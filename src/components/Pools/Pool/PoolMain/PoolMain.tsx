@@ -16,16 +16,16 @@ const PoolMain: React.FC<IPoolMainProps> = ({ pool }) => {
         <div className="PoolMain-Wrapper">
             <div className="PoolMain-Details">
                 <div className="PoolMain-Details_Address flex-column">
-                    <span className="PoolMain-Details_AddressLabel white">NFT address</span>
-                    <span className="PoolMain-Details_AddressValue value">{shortAddress}</span>
+                    <span className="PoolMain-Details_AddressLabel color-white">NFT address</span>
+                    <span className="PoolMain-Details_AddressValue main-pool-value">{shortAddress}</span>
                 </div>
                 <div className="PoolMain-Details_Token flex-column">
-                    <span className="PoolMain-Details_TokenLabel white">Token ID</span>
-                    <span className="PoolMain-Details_TokenValue value">{formatHexIntoDecimal(pool.tokenId)}</span>
+                    <span className="PoolMain-Details_TokenLabel color-white">Token ID</span>
+                    <span className="PoolMain-Details_TokenValue main-pool-value">{formatHexIntoDecimal(pool.tokenId)}</span>
                 </div>
                 <div className="PoolMain-Details_MinParticipation flex-column">
-                    <span className="PoolMain-Details_MinParticipationLabel white">Min Participation</span>
-                    <span className="PoolMain-Details_MinParticipationValue value">{formatHexIntoDecimal(pool.minParticipation)}</span>
+                    <span className="PoolMain-Details_MinParticipationLabel color-white">Min Participation</span>
+                    <span className="PoolMain-Details_MinParticipationValue main-pool-value">{formatHexIntoDecimal(pool.minParticipation)} BIT</span>
                 </div>
             </div>
         </div>

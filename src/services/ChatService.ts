@@ -5,7 +5,17 @@ import { fetchData } from "./FetchService";
 
 const appId = "tiCe9Jvh";
 
-export const sendMessage = async (message: IMessageCE[], conversationId: string) => {
+export const findMessagesByConversationId = async (conversationId: string) => {
+    try {
+        const response = await fetchData(`v1/${appId}/conversations/${conversationId}/messages`, "GET");
+
+        return response;
+    } catch (ex) {
+        throw ex;
+    }
+};
+
+export const sendMessage = async ({ message, conversationId }: { message: IMessageCE[], conversationId: string }) => {
     try {
         const response = await fetchData(`v1/${appId}/conversations/${conversationId}/messages`, "POST", JSON.stringify(message));
 
@@ -49,6 +59,16 @@ export const createConversation = async (conversation: IConversationCE) => {
 export const findConversations = async () => {
     try {
         const response = await fetchData(`v1/${appId}/conversations`, "GET");
+
+        return response;
+    } catch (ex) {
+        throw ex;
+    }
+};
+
+export const findConversationById = async (conversationId: string) => {
+    try {
+        const response = await fetchData(`v1/${appId}/conversations/${conversationId}`, "GET");
 
         return response;
     } catch (ex) {

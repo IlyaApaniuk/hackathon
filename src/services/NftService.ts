@@ -4,8 +4,7 @@ import { Contract, Provider, setMulticallAddress } from "ethers-multicall";
 import UniOwnPool from "../config/abi/UniOwnPool.json";
 import UniOwnPoolFactoryABI from "../config/abi/UniOwnPoolFactoryABI.json";
 import { FACTORY_ADDRESS, MULTICALL_ADDRESS, RPC_ADDRESS } from "../config/constants/address";
-import IPool from "../models/Pool";
-import { formatHexIntoDecimal } from "../utils/utils";
+import IPool, { poolPropertyNames } from "../models/Pool";
 
 const CHAIN_ID = 5001;
 const TOTAL_DATA_DISPLAY = 10;
@@ -47,12 +46,18 @@ export const getPoolList = async () => {
                 START = 0;
                 END = totalData.data.number;
             } else {
-                END = totalData.data.number >= TOTAL_DATA_DISPLAY ? totalData.data.number : TOTAL_DATA_DISPLAY;
-                START = totalData.data.number >= TOTAL_DATA_DISPLAY ? totalData.data.number - TOTAL_DATA_DISPLAY : 0;
+                END =
+                    totalData.data.number >= TOTAL_DATA_DISPLAY
+                        ? totalData.data.number
+                        : TOTAL_DATA_DISPLAY;
+                START =
+                    totalData.data.number >= TOTAL_DATA_DISPLAY
+                        ? totalData.data.number - TOTAL_DATA_DISPLAY
+                        : 0;
             }
         }
     } catch (error) {
-        debugger
+        debugger;
         throw error;
     }
     setMulticallAddress(CHAIN_ID, MULTICALL_ADDRESS[CHAIN_ID]);
@@ -78,16 +83,21 @@ export const getPoolsInfo = async (addresses: string[]) => {
     const ethcallProvider = new Provider(provider);
     await ethcallProvider.init();
 
-    const calls = addresses.map(a => (
-        new Contract(a, UniOwnPool).pool()
-    ));
+    const calls = addresses.map(a => new Contract(a, UniOwnPool).pool());
 
     try {
         const response = await ethcallProvider.all(calls);
 
-        const pools: IPool[] = response.map((r, i) => (
-            { ...r as IPool, address: addresses[i] }
-        ));
+        const pools: IPool[] = response.map((r, i) => {
+            const pool: IPool = { address: addresses[i] } as IPool;
+            poolPropertyNames.forEach(n => {
+                pool[n] = r[n];
+            });
+
+            return pool;
+        });
+
+        debugger
 
         return PrepareResponse(pools);
     } catch (error) {

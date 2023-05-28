@@ -2,16 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Gilroy-Regular';
+    src: local('MyFont'), url(../fonts/Gilroy-Regular.woff) format('woff');
+}
+
 body {
     background-color: #111111;
     font-family: 'Gilroy-Regular';
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .flex-1 {
     flex: 1;
 }
 
-@font-face {
-    font-family: 'Gilroy-Regular';
-    src: local('MyFont'), url(../fonts/Gilroy-Regular.woff) format('woff');
+.color-white {
+    color: #ffffff;
+}
+
+.main-pool-value {
+    padding: 3px 17px;
+    font-size: 15px;
+    font-weight: 500;
 }
