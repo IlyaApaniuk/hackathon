@@ -8,11 +8,12 @@ import "./Pool.scss";
 
 export interface IPoolProps {
     pool: IPool;
+    onClick: () => void;
 }
 
-const Pool: React.FC<IPoolProps> = ({ pool }) => {
+const Pool: React.FC<IPoolProps> = ({ pool, onClick }) => {
     return (
-        <div className="Pool-Container">
+        <div className="Pool-Container" onClick={onClick}>
             <PoolMain pool={pool} />
             <PoolAdditional pool={pool} />
         </div>

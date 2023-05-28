@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
-import logo from "../../images/landing/logo.png";
+import logo from "../../images/logo.png";
 import footer from "../../images/landing/footer.png";
 import howItWorks from "../../images/landing/how-it-works.png";
 import benefitsForUser from "../../images/landing/benefits-for-user.png";

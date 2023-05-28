@@ -1,4 +1,5 @@
 export default interface IPool {
+    [o: string]: string | number | boolean;
     address: string;
     tokenId: number;
     maxAmount: number;
@@ -12,6 +13,15 @@ export default interface IPool {
     poolSuccessful: boolean;
 }
 
-export const poolConfig = {
-
-}
+export const poolPropertyNames = [
+    "tokenId",
+    "maxAmount",
+    "totalAmount",
+    "endTime",
+    "minParticipation",
+    "itemId",
+    "collection",
+    "marketplace",
+    "poolFinished",
+    "poolSuccessful"
+];

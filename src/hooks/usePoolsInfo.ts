@@ -7,12 +7,14 @@ const usePoolsInfo = (addresses: string[], shouldPerform: boolean) => {
     const {
         data: pools,
         error: poolsError,
+        isLoading: isPoolsLoading,
         clearError: clearPoolsError
     } = useExecuteQuery<IPool[]>(getPoolsInfo, { shouldPerform }, addresses);
 
     return {
         pools,
         poolsError,
+        isPoolsLoading,
         clearPoolsError
     };
 };

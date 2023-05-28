@@ -21,6 +21,6 @@ export interface IMessageCE {
     sender: string;
     type: string;
     referencedMessageId?: string;
-    custom: { [key: string]: string };
+    custom?: { [key: string]: string };
     idempotencyKey?: string;
 }

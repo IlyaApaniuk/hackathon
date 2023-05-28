@@ -4,30 +4,37 @@ const useExecuteQuery = <T>(handler: (...params: any) => Promise<Response>, opti
     const { shouldPerform } = options;
     const [data, setData] = useState<T | null>(null);
     const [error, setError] = useState<string | null>(null);
+    const [isLoading, setLoading] = useState<boolean>(false);
 
     const getData = useCallback(async () => {
         try {
+            setLoading(true);
             const response = await handler(params || {});
             const value = await response.json();
 
             setData(value);
+            setLoading(false);
         } catch (e) {
+            setLoading(false);
             const ex = e as Error;
             setError(ex?.message);
         }
     }, [handler, params]);
 
-    const onSubmit = useCallback(async () => {
+    const onSubmit = useCallback(async (submitParams: any) => {
         try {
-            const response = await handler(params || {});
+            setLoading(true);
+            const response = await handler(submitParams || {});
             const value = await response.json();
 
+            setLoading(false);
             return value;
         } catch (e) {
+            setLoading(false);
             const ex = e as Error;
             setError(ex.message);
         }
-    }, [handler, params]);
+    }, [handler]);
 
     const clearError = () => {
         setError(null);
@@ -41,6 +48,7 @@ const useExecuteQuery = <T>(handler: (...params: any) => Promise<Response>, opti
         data,
         error,
         onSubmit,
+        isLoading,
         clearError,
         refetch: getData
     };
